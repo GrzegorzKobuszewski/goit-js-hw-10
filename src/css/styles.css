@@ -61,10 +61,6 @@ section {
 .country-list img,
 .country-info img {
   margin-right: 30px;
-  border: 2px;
-}
-
-.country-list img {
   border: solid 2px;
 }
 
