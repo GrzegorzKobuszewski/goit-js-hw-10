@@ -20,7 +20,7 @@ function clearCountryData() {
 function searchCountry(e) {
     const countryToFind = e.target.value.trim();
     if (!countryToFind) {
-        clearAtrributes();
+        clearCountryData();
         return;
     }
 
@@ -55,12 +55,13 @@ function renderCountryList(country) {
     countryList.innerHTML = markup;
 }
 
+// Format liczby z 38123456 do 38 123 456
+// formatTh = new DecimalFormat("###,###");
+
 function renderCountryInfo(country) {
     const markupInfo = country
         .map(({ name, capital, population, flags, languages }) => {
-            return `<h1><img src="${flags.svg}" alt="${
-                name.official
-            }" width="100" height="60">${name.official}</h1>
+            return `<h1><img src="${flags.svg}" alt="${name.official}" width="100" height="60">${name.official}</h1>
             <p><span>Capital: </span>${capital}</p>
             <p><span>Population: </span>${population}</p>
             <p><span>Languages: </span>${Object.values(languages)}</p>`;

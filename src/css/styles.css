@@ -61,7 +61,7 @@ section {
 .country-list img,
 .country-info img {
   margin-right: 30px;
-  border: solid 2px;
+  /*border: solid 2px;*/
 }
 
 .country-info h1 {
