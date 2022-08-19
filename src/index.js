@@ -57,13 +57,24 @@ function renderCountryList(country) {
 
 // Format liczby z 38123456 do 38 123 456
 // formatTh = new DecimalFormat("###,###");
+/*
+population = population.toLocaleString('pl-PL',{
+  useGrouping:'true',
+  minimumFractionDigits:"2",
+  maxFractionDigits:"2"
+});
+*/
 
 function renderCountryInfo(country) {
     const markupInfo = country
         .map(({ name, capital, population, flags, languages }) => {
             return `<h1><img src="${flags.svg}" alt="${name.official}" width="100" height="60">${name.official}</h1>
             <p><span>Capital: </span>${capital}</p>
-            <p><span>Population: </span>${population}</p>
+            <p><span>Population: </span>${population.toLocaleString('pl-PL',{
+  useGrouping:'true',
+  minimumFractionDigits:"0",
+  maxFractionDigits:"2"
+})}</p>
             <p><span>Languages: </span>${Object.values(languages)}</p>`;
         })
         .join('');
